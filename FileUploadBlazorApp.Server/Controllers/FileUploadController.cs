@@ -6,7 +6,7 @@ namespace FileUploadBlazorApp.Server.Controllers
     [Route("api/[controller]")]
     public class FileUploadController(IWebHostEnvironment _webHostEnvironment) : ControllerBase
     {
-        [HttpPost("upload")]
+        [HttpPost("uploads")]
         public async Task<IActionResult> UploadFile([FromForm] IFormFile fileToUpload)
         {
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(fileToUpload.FileName)}";
